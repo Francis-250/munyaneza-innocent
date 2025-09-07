@@ -83,7 +83,7 @@ export default function ProjectCard() {
       whileInView="visible"
       viewport={{ once: true, amount: 0.1 }}
     >
-      {projects.map((project, i) => (
+      {projects.map((project: import("@/types").Project, i: number) => (
         <ProjectItem key={project.id} project={project} i={i} />
       ))}
     </motion.div>

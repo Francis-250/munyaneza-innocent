@@ -5,7 +5,9 @@ import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 import { useRef } from "react";
 
 // ✅ Child component (handles per-skill hooks safely)
-function SkillItem({ skill, index }: { skill: any; index: number }) {
+import { Skill } from "@/types";
+
+function SkillItem({ skill }: { skill: Skill }) {
   const skillRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: skillRef,
@@ -112,8 +114,8 @@ export default function SkillCard() {
         whileInView="visible"
         viewport={{ once: true, amount: 0.1 }}
       >
-        {skills.map((skill, index) => (
-          <SkillItem key={index} skill={skill} index={index} />
+        {skills.map((skill) => (
+          <SkillItem key={skill.title} skill={skill} />
         ))}
       </motion.div>
     </motion.div>
