@@ -124,37 +124,42 @@ export const skills: Skill[] = [
   {
     icon: "/cctv.jpg",
     title: "CCTV Installation & Maintenance",
-    level: 85,
+    level: 90,
   },
   {
     icon: "/pc.jpg",
     title: "PC Troubleshooting & Repair",
-    level: 80,
+    level: 90,
   },
   {
     icon: "/network.jpg",
     title: "Networking & LAN Setup",
-    level: 75,
+    level: 80,
   },
   {
     icon: "/os.jpg",
     title: "Operating System Installation",
-    level: 80,
+    level: 90,
   },
   {
     icon: "/security.jpg",
     title: "IT Security & Access Control",
-    level: 70,
+    level: 60,
   },
   {
     icon: "/tools.jpg",
     title: "Hardware Upgrades & Maintenance",
-    level: 75,
+    level: 90,
   },
   {
     icon: "/printer.jpg",
     title: "Printer & Peripheral Setup",
-    level: 70,
+    level: 80,
+  },
+  {
+    icon: "/sod.jpg",
+    title: "Software Development",
+    level: 80,
   },
 ];
 
