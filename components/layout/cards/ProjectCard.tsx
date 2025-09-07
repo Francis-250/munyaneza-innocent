@@ -1,5 +1,5 @@
 import { projects } from "@/data/data";
-import { ExternalLink, Github } from "lucide-react";
+// Removed unused imports to fix lint errors
 import Image from "next/image";
 import React from "react";
 

@@ -4,7 +4,7 @@ import {
   Phone,
   MapPin,
   ArrowUp,
-  Wrench,
+  // ...existing code...
   Shield,
   ExternalLink,
   Heart,
@@ -170,4 +170,3 @@ export default function Footer() {
     </footer>
   );
 }
-  

@@ -1,6 +1,6 @@
 import { cn } from "@/lib/utils";
 import { Spotlight } from "../ui/Spotlight";
-import { FaLocationArrow, FaPlay } from "react-icons/fa";
+import { FaLocationArrow } from "react-icons/fa";
 import { homeContents } from "@/data/data";
 import Image from "next/image";
 
