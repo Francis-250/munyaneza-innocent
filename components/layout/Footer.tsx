@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useRef } from "react";
 import {
   Mail,
   Phone,
@@ -11,8 +11,7 @@ import {
 } from "lucide-react";
 import { socialLinks } from "@/data/data";
 import { quickLinks, services } from "@/types";
-import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef } from "react";
+import { motion, useScroll, useTransform, Variants } from "framer-motion";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -25,7 +24,8 @@ export default function Footer() {
 
   const y = useTransform(scrollYProgress, [0, 1], [50, -50]);
 
-  const containerVariants = {
+  // Variants
+  const containerVariants: Variants = {
     hidden: { opacity: 0, y: 50 },
     visible: {
       opacity: 1,
@@ -37,7 +37,7 @@ export default function Footer() {
     },
   };
 
-  const itemVariants = {
+  const itemVariants: Variants = {
     hidden: { opacity: 0, y: 30 },
     visible: {
       opacity: 1,
@@ -50,7 +50,7 @@ export default function Footer() {
     },
   };
 
-  const socialIconVariants = {
+  const socialIconVariants: Variants = {
     hidden: { scale: 0, rotate: -180 },
     visible: {
       scale: 1,
@@ -81,14 +81,8 @@ export default function Footer() {
       {/* Animated background pattern */}
       <motion.div
         className="absolute inset-0 opacity-10"
-        animate={{
-          backgroundPosition: ["0% 0%", "100% 100%"],
-        }}
-        transition={{
-          duration: 20,
-          repeat: Infinity,
-          ease: "linear",
-        }}
+        animate={{ backgroundPosition: ["0% 0%", "100% 100%"] }}
+        transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
         style={{
           backgroundImage:
             "radial-gradient(circle at 25% 25%, #9333ea 0%, transparent 50%), radial-gradient(circle at 75% 75%, #06b6d4 0%, transparent 50%)",
@@ -118,11 +112,12 @@ export default function Footer() {
                 Innocent
               </span>
             </motion.h2>
+
             <motion.p
               className="text-gray-400 max-w-md leading-relaxed"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2 }}
+              transition={{ type: "spring", delay: 0.2, stiffness: 300 }}
             >
               IT Support & CCTV Specialist based in Kigali. I provide
               professional solutions in CCTV installation, PC troubleshooting,
@@ -130,7 +125,7 @@ export default function Footer() {
               operations.
             </motion.p>
 
-            {/* Contact with hover animations */}
+            {/* Contact Links */}
             <motion.div className="space-y-3 text-gray-300">
               {[
                 {
@@ -165,7 +160,7 @@ export default function Footer() {
               ))}
             </motion.div>
 
-            {/* Social Links with enhanced animations */}
+            {/* Social Links */}
             <motion.div className="flex space-x-4">
               {socialLinks.map((social, i) => {
                 const IconComponent = social.icon;
@@ -180,16 +175,13 @@ export default function Footer() {
                     whileInView="visible"
                     whileHover="hover"
                     whileTap={{ scale: 0.9 }}
-                    transition={{ delay: i * 0.1 }}
                     className={`bg-slate-800/50 hover:bg-slate-700/50 p-3 rounded-lg border border-slate-700/50 hover:border-purple-500/50 text-gray-400 ${social.color} transition-all duration-300 group`}
                   >
                     <motion.div
                       whileHover={{ scale: 1.2 }}
                       transition={{ type: "spring", stiffness: 400 }}
                     >
-                      {React.createElement(IconComponent, {
-                        className: "w-5 h-5 group-hover:drop-shadow-lg",
-                      })}
+                      <IconComponent className="w-5 h-5 group-hover:drop-shadow-lg" />
                     </motion.div>
                   </motion.a>
                 );
@@ -206,7 +198,11 @@ export default function Footer() {
                   key={link.name}
                   initial={{ opacity: 0, x: -20 }}
                   whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ delay: i * 0.05 }}
+                  transition={{
+                    type: "spring",
+                    delay: i * 0.05,
+                    stiffness: 300,
+                  }}
                   whileHover={{ x: 10 }}
                 >
                   <a
@@ -238,7 +234,11 @@ export default function Footer() {
                   key={service.name}
                   initial={{ opacity: 0, x: -20 }}
                   whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ delay: i * 0.05 }}
+                  transition={{
+                    type: "spring",
+                    delay: i * 0.05,
+                    stiffness: 300,
+                  }}
                   whileHover={{ x: 10 }}
                 >
                   <a
@@ -262,11 +262,12 @@ export default function Footer() {
           </motion.div>
         </motion.div>
 
-        {/* Bottom section */}
+        {/* Bottom Section */}
         <motion.div
           className="py-8 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center gap-4"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
+          transition={{ type: "spring", stiffness: 300 }}
           viewport={{ once: true }}
         >
           <div className="flex items-center space-x-2 text-gray-400 text-sm">
@@ -294,6 +295,7 @@ export default function Footer() {
               boxShadow: "0 0 20px rgba(147, 51, 234, 0.5)",
             }}
             whileTap={{ scale: 0.9 }}
+            transition={{ type: "spring", stiffness: 400 }}
             className="bg-slate-800/50 hover:bg-slate-700/50 border border-slate-700/50 hover:border-purple-500/50 p-3 rounded-lg text-gray-400 hover:text-purple-400 transition-all group"
           >
             <ArrowUp className="w-5 h-5 group-hover:animate-bounce" />
