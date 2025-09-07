@@ -139,9 +139,9 @@ export default function Footer() {
                   href: "tel:+250123456789",
                 },
                 { icon: MapPin, text: "Kigali, Rwanda", href: "#" },
-              ].map((contact, i) => (
+              ].map((contact) => (
                 <motion.a
-                  key={i}
+                  key={contact.text}
                   href={contact.href}
                   className="flex items-center space-x-3 hover:text-purple-400 transition-colors group cursor-pointer"
                   whileHover={{ x: 10 }}
@@ -162,7 +162,7 @@ export default function Footer() {
 
             {/* Social Links */}
             <motion.div className="flex space-x-4">
-              {socialLinks.map((social, i) => {
+              {socialLinks.map((social) => {
                 const IconComponent = social.icon;
                 return (
                   <motion.a
@@ -193,14 +193,13 @@ export default function Footer() {
           <motion.div variants={itemVariants} className="space-y-6">
             <h3 className="text-lg font-semibold text-white">Quick Links</h3>
             <ul className="space-y-3">
-              {quickLinks.map((link, i) => (
+              {quickLinks.map((link) => (
                 <motion.li
                   key={link.name}
                   initial={{ opacity: 0, x: -20 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{
                     type: "spring",
-                    delay: i * 0.05,
                     stiffness: 300,
                   }}
                   whileHover={{ x: 10 }}
@@ -229,14 +228,13 @@ export default function Footer() {
           <motion.div variants={itemVariants} className="space-y-6">
             <h3 className="text-lg font-semibold text-white">Services</h3>
             <ul className="space-y-3">
-              {services.map((service, i) => (
+              {services.map((service) => (
                 <motion.li
                   key={service.name}
                   initial={{ opacity: 0, x: -20 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{
                     type: "spring",
-                    delay: i * 0.05,
                     stiffness: 300,
                   }}
                   whileHover={{ x: 10 }}
