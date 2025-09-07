@@ -4,7 +4,13 @@ import { Spotlight } from "../ui/Spotlight";
 import { FaLocationArrow } from "react-icons/fa";
 import { homeContents } from "@/data/data";
 import Image from "next/image";
-import { motion, useScroll, useTransform, useSpring } from "framer-motion";
+import {
+  motion,
+  Variants,
+  useScroll,
+  useTransform,
+  useSpring,
+} from "framer-motion";
 import { useRef } from "react";
 
 export default function Hero() {
@@ -21,7 +27,7 @@ export default function Hero() {
   const y = useTransform(smoothProgress, [0, 1], ["0%", "50%"]);
   const opacity = useTransform(smoothProgress, [0, 0.5], [1, 0]);
 
-  const containerVariants = {
+  const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -32,7 +38,7 @@ export default function Hero() {
     },
   };
 
-  const itemVariants = {
+  const itemVariants: Variants = {
     hidden: { y: 20, opacity: 0 },
     visible: {
       y: 0,
@@ -45,7 +51,7 @@ export default function Hero() {
     },
   };
 
-  const statsVariants = {
+  const statsVariants: Variants = {
     hidden: { scale: 0.8, opacity: 0 },
     visible: {
       scale: 1,
@@ -82,7 +88,7 @@ export default function Hero() {
         <Spotlight className="left-80 top-28 h-[80vh] w-[50vw]" fill="blue" />
       </motion.div>
 
-      {/* Gradient Overlay with animated grid */}
+      {/* Gradient Overlay */}
       <div className="absolute inset-0 bg-gradient-to-br from-[#0a0a23] via-[#000319] to-[#1a0a2e]">
         <motion.div
           className={cn(
@@ -90,14 +96,8 @@ export default function Hero() {
             "[background-size:60px_60px]",
             "[background-image:linear-gradient(to_right,rgba(147,51,234,0.1)_1px,transparent_1px),linear-gradient(to_bottom,rgba(147,51,234,0.1)_1px,transparent_1px)]"
           )}
-          animate={{
-            backgroundPosition: ["0px 0px", "60px 60px"],
-          }}
-          transition={{
-            duration: 20,
-            repeat: Infinity,
-            ease: "linear",
-          }}
+          animate={{ backgroundPosition: ["0px 0px", "60px 60px"] }}
+          transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
         />
       </div>
 
@@ -166,9 +166,7 @@ export default function Hero() {
             <motion.a
               href="#project"
               className="group relative inline-flex h-14 overflow-hidden rounded-2xl p-[2px] focus:outline-none"
-              whileHover={{
-                boxShadow: "0 0 20px rgba(147,51,234,0.5)",
-              }}
+              whileHover={{ boxShadow: "0 0 20px rgba(147,51,234,0.5)" }}
             >
               <span
                 className="absolute inset-[-1000%] animate-[spin_3s_linear_infinite] 
@@ -186,7 +184,7 @@ export default function Hero() {
             </motion.a>
           </motion.div>
 
-          {/* Stats with enhanced animations */}
+          {/* Stats */}
           <motion.div
             className="flex flex-wrap gap-8 pt-8 justify-center lg:justify-start"
             variants={statsVariants}
@@ -202,15 +200,9 @@ export default function Hero() {
               <motion.div
                 key={i}
                 variants={statsVariants}
-                whileHover={{
-                  scale: 1.1,
-                  rotateY: 10,
-                  z: 50,
-                }}
+                whileHover={{ scale: 1.1, rotateY: 10, z: 50 }}
                 className="text-center lg:text-left"
-                style={{
-                  transformStyle: "preserve-3d",
-                }}
+                style={{ transformStyle: "preserve-3d" }}
               >
                 <motion.div
                   className="text-3xl font-bold text-white"
@@ -237,13 +229,11 @@ export default function Hero() {
           </motion.div>
         </motion.div>
 
-        {/* Right Illustration with parallax effect */}
+        {/* Right Illustration */}
         <motion.div
           className="relative flex items-center justify-center"
           variants={itemVariants}
-          style={{
-            y: useTransform(scrollYProgress, [0, 1], [0, -50]),
-          }}
+          style={{ y: useTransform(scrollYProgress, [0, 1], [0, -50]) }}
         >
           <div className="relative z-10 group">
             <motion.div
