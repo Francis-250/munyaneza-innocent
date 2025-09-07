@@ -4,7 +4,9 @@ import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 
-function ProjectItem({ project, i }: { project: any; i: number }) {
+import { Project } from "@/types";
+
+function ProjectItem({ project, i }: { project: Project; i: number }) {
   const cardRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: cardRef,
