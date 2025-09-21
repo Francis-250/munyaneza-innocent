@@ -1,7 +1,6 @@
 "use client";
 import React, { useRef } from "react";
 import {
-  Mail,
   Phone,
   MapPin,
   ArrowUp,
