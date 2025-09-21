@@ -32,8 +32,8 @@ export default function ContactForm() {
                 <Mail className="w-6 h-6 text-purple-400" />
               </div>
               <div>
-                <p className="text-gray-400 text-sm">Email</p>
-                <p className="text-white font-medium">hello@example.com</p>
+                <p className="text-gray-400 text-sm">WhatsApp</p>
+                <p className="text-white font-medium">+250781294548</p>
               </div>
             </div>
 
@@ -43,7 +43,7 @@ export default function ContactForm() {
               </div>
               <div>
                 <p className="text-gray-400 text-sm">Phone</p>
-                <p className="text-white font-medium">+1 (555) 123-4567</p>
+                <p className="text-white font-medium">+250781294548</p>
               </div>
             </div>
 
@@ -61,21 +61,21 @@ export default function ContactForm() {
             <p className="text-gray-400 text-sm mb-4">Follow me on</p>
             <div className="flex space-x-4">
               <a
-                href="https://github.com/Francis-250"
+                href="https://github.com/Munyanezainnocent/Munyanezainnocent"
                 target="_blank"
                 className="bg-white/5 hover:bg-white/10 border border-white/10 hover:border-purple-500/50 px-4 py-2 rounded-lg text-gray-300 hover:text-white transition-all duration-300 text-sm"
               >
                 <Github />
               </a>
               <a
-                href="https://github.com/Francis-250"
+                href="https://www.instagram.com/munyaneza__innocent/"
                 target="_blank"
                 className="bg-white/5 hover:bg-white/10 border border-white/10 hover:border-purple-500/50 px-4 py-2 rounded-lg text-gray-300 hover:text-white transition-all duration-300 text-sm"
               >
                 <Instagram />
               </a>
               <a
-                href="https://github.com/Francis-250"
+                href="https://www.linkedin.com/in/munyaneza-innocent-b9756b291"
                 target="_blank"
                 className="bg-white/5 hover:bg-white/10 border border-white/10 hover:border-purple-500/50 px-4 py-2 rounded-lg text-gray-300 hover:text-white transition-all duration-300 text-sm"
               >

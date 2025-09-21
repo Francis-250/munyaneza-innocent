@@ -8,6 +8,7 @@ import {
   Shield,
   ExternalLink,
   Heart,
+  MessageCircle,
 } from "lucide-react";
 import { socialLinks } from "@/data/data";
 import { quickLinks, services } from "@/types";
@@ -129,14 +130,14 @@ export default function Footer() {
             <motion.div className="space-y-3 text-gray-300">
               {[
                 {
-                  icon: Mail,
-                  text: "hello@example.com",
-                  href: "mailto:hello@example.com",
+                  icon: MessageCircle,
+                  text: "+250781294548",
+                  href: "tel:+250781294548",
                 },
                 {
                   icon: Phone,
-                  text: "+250 123 456 789",
-                  href: "tel:+250123456789",
+                  text: "+250781294548",
+                  href: "tel:+250781294548",
                 },
                 { icon: MapPin, text: "Kigali, Rwanda", href: "#" },
               ].map((contact) => (

@@ -174,13 +174,13 @@ export const socialLinks: Social[] = [
   {
     name: "GitHub",
     icon: Github,
-    href: "https://github.com",
+    href: "https://github.com/Munyanezainnocent/Munyanezainnocent",
     color: "hover:text-gray-300",
   },
   {
     name: "LinkedIn",
     icon: Linkedin,
-    href: "https://linkedin.com",
+    href: "https://www.linkedin.com/in/munyaneza-innocent-b9756b291",
     color: "hover:text-blue-400",
   },
   {
